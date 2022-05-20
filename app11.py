@@ -32,30 +32,30 @@ def main() :
 
     df2 = pd.read_csv('data2/iris.csv')
 
-    # 스트림릿이 제공하는 bar_chart
-    st.bar_chart(df2.iloc[:,0:-2+1])
+        # 스트림릿이 제공하는 bar_chart
+        st.bar_chart(df2.iloc[:,0:-2+1])
 
-    ## 웹에서 사용할 수 있는 차트 라이브러리 중
-    ## Altair 차트
+        ## 웹에서 사용할 수 있는 차트 라이브러리 중
+        ## Altair 차트
 
-    alt_chart = alt.Chart(df2).mark_circle().encode(x='petal_length', y='petal_width',color='species')
+        alt_chart = alt.Chart(df2).mark_circle().encode(x='petal_length', y='petal_width',color='species')
 
-    st.altair_chart(alt_chart)
+        st.altair_chart(alt_chart)
 
     # 스트림릿의 map 차트
     df3 = pd.read_csv('data2/location.csv', index_col=0)
-    st.dataframe(df3)
+        st.dataframe(df3)
 
-    st.map(df3)
+        st.map(df3)
 
-    # plotly 라이브러리를 이용한 차트 그리기.
+        # plotly 라이브러리를 이용한 차트 그리기.
 
-    df4 = pd.read_csv('data2/prog_languages_data.csv', index_col=0)
-    st.dataframe(df4)
+        df4 = pd.read_csv('data2/prog_languages_data.csv', index_col=0)
+        st.dataframe(df4)
 
-    # plotly 의
-    fig1 = px.pie(df4, names='lang', values='Sum', title= '각 언어별 파이차트')
-    st.plotly_chart
+        # plotly 의
+        fig1 = px.pie(df4, names='lang', values='Sum', title= '각 언어별 파이차트')
+        st.plotly_chart
 
     # plotly의 bar 차트
 
