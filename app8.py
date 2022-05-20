@@ -58,26 +58,26 @@ def main() :
     ## 데이터프레임으로 읽어서 화면에 표시
 
     elif choice == menu[1] :
-            st.subheader('CSV 파일 업로드')
+        st.subheader('CSV 파일 업로드')
         
 
-            upload_files = st.file_uploader('CSV 파일 선택', type=['csv'])
+        upload_files = st.file_uploader('CSV 파일 선택', type=['csv'],accept_multiple_files=True)
 
-            if upload_files is not None :
-                # 업로드한 파일이 리스트이니깐, 하나씩 가져와서
-                # temp 폴더에 저장할 것이다.
-                for file in upload_files :
-                
-                    current_time = datetime.now()                          
-                    new_filename = current_time.isoformat().replace(':','_') + '.csv'
+        if upload_files is not None :
+            # 업로드한 파일이 리스트이니깐, 하나씩 가져와서
+            # temp 폴더에 저장할 것이다.
+            for file in upload_files :
+            
+                current_time = datetime.now()                          
+                new_filename = current_time.isoformat().replace(':','_') + '.csv'
 
-                    file.name = new_filename
-                    save_uploaded_file('temp',file)
+                file_name = new_filename
+                save_uploaded_file('temp',file)
 
-                # 저장이 다 끝나면, 웹 브라우저에 이미지 표시
-                for file in upload_files :
-                    df = pd.read_csv(file)
-                    st. dataframe(df)
+            # 저장이 다 끝나면, 웹 브라우저에 이미지 표시
+            for file in upload_files :
+                df = pd.read_csv(file)
+                st. dataframe(df)
 
 
 

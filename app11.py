@@ -44,18 +44,18 @@ def main() :
 
     # 스트림릿의 map 차트
     df3 = pd.read_csv('data2/location.csv', index_col=0)
-        st.dataframe(df3)
+    st.dataframe(df3)
 
-        st.map(df3)
+    st.map(df3)
 
-        # plotly 라이브러리를 이용한 차트 그리기.
+    # plotly 라이브러리를 이용한 차트 그리기.
 
-        df4 = pd.read_csv('data2/prog_languages_data.csv', index_col=0)
-        st.dataframe(df4)
+    df4 = pd.read_csv('data2/prog_languages_data.csv', index_col=0)
+    st.dataframe(df4)
 
-        # plotly 의
-        fig1 = px.pie(df4, names='lang', values='Sum', title= '각 언어별 파이차트')
-        st.plotly_chart
+    # plotly 의파이차트
+    fig1 = px.pie(df4, names='lang', values='Sum', title= '각 언어별 파이차트')
+    st.plotly_chart(fig1)
 
     # plotly의 bar 차트
 
