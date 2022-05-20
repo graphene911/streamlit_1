@@ -34,19 +34,31 @@ def main() :
 
         # 파일명을 유니크하게 만들어서 저장
         # 현재시간을 활용해서, 파일명을 만든다.
-        current_time = datetime.now()
-        print(current_time.isoformat().replace(':','_'))
+            current_time = datetime.now()
+            print(current_time.isoformat().replace(':','_'))
         
-        new_filename = current_time.isoformat().replace(':','_') + '.jpg'
+            new_filename = current_time.isoformat().replace(':','_') + '.jpg'
 
-        upload_file.name = new_filename
-        save_uploaded_file('temp',upload_file)
+            upload_file.name = new_filename
+            save_uploaded_file('temp',upload_file)
 
-    elif choice == menu[1] :
-        st.subheader('CSV 파일 업로드')
+        elif choice == menu[1] :
+            st.subheader('CSV 파일 업로드')
         
-    else :
-        st.subheader('파일 업로드 프로젝트 입니다.')
+
+            upload_file = st.file_uploader('CSV 파일 선택', type=['csv'])
+
+            if upload_file is not None :
+                current_time = datetime.now()
+                print(current_time.isoformat().replace(':','_'))
+            
+                new_filename = current_time.isoformat().replace(':','_') + '.csv'
+
+                upload_file.name = new_filename
+                save_uploaded_file('temp',upload_file)
+
+        else :
+            st.subheader('파일 업로드 프로젝트 입니다.')
 
 
 
