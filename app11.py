@@ -33,14 +33,14 @@ def main() :
     df2 = pd.read_csv('data2/iris.csv')
 
         # 스트림릿이 제공하는 bar_chart
-        st.bar_chart(df2.iloc[:,0:-2+1])
+    st.bar_chart(df2.iloc[:,0:-2+1])
 
         ## 웹에서 사용할 수 있는 차트 라이브러리 중
         ## Altair 차트
 
-        alt_chart = alt.Chart(df2).mark_circle().encode(x='petal_length', y='petal_width',color='species')
+    alt_chart = alt.Chart(df2).mark_circle().encode(x='petal_length', y='petal_width',color='species')
 
-        st.altair_chart(alt_chart)
+    st.altair_chart(alt_chart)
 
     # 스트림릿의 map 차트
     df3 = pd.read_csv('data2/location.csv', index_col=0)
