@@ -17,7 +17,7 @@ def main() :
 
     st.image(url)
 
-
+    # 3. video파일을 화면에 표시하기
     video_file = open('data2/secret_of_success.mp4', 'rb')
 
     st.video(video_file)

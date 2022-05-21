@@ -9,7 +9,7 @@ def main() :
     
     # if st.button('데이터 보기') :
     #     st.dataframe(df)
-
+    
     # 대문자 버튼을 만들고,
     # 버튼을 누르면, species 컬럼의 값들을 대문자로 변경한
     # 데이터 프레임을 보여주세요.
