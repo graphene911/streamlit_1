@@ -1,5 +1,7 @@
 import streamlit as st
-
+from fbprophet import Prophet
+import requests
+import json
 def main() :
     
     # 유저한테 입력을 받는 방법
